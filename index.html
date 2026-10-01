@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tu negocio automatizado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F7FB;--ink:#111A33;--muted:#4D5675;--card:#FFFFFF;--line:#DDE1EE;--accent:#2446E0;--on-accent:#FFFFFF;--soft:#E6EBFF;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1426;--ink:#EEF1FF;--muted:#A5ADCB;--card:#182040;--line:#2B3566;--accent:#7F97FF;--on-accent:#0F1426;--soft:#202A55}}
+:root[data-theme="dark"]{--bg:#0F1426;--ink:#EEF1FF;--muted:#A5ADCB;--card:#182040;--line:#2B3566;--accent:#7F97FF;--on-accent:#0F1426;--soft:#202A55}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 Figtree,system-ui,sans-serif}
+main{max-width:720px;margin:0 auto;padding:40px 20px 56px}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;line-height:1.1;margin:0}
+h1{font-size:clamp(34px,9vw,52px);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(24px,6vw,30px);font-weight:800;margin-bottom:16px}
+h3{font-size:19px;font-weight:600;margin-bottom:6px}
+p{margin:0 0 14px}
+.brand{font-weight:600;color:var(--accent);margin-bottom:28px}
+.lead{font-size:19px;color:var(--muted);max-width:34em;margin:18px 0 26px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:14px 22px;border-radius:12px;font-weight:600;text-decoration:none;background:var(--accent);color:var(--on-accent)}
+.btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+section{margin-top:56px}
+.flow{list-style:none;margin:0;padding:0;border-left:3px solid var(--accent)}
+.flow li{padding:2px 0 18px 18px;position:relative}
+.flow li:before{content:"";position:absolute;left:-9px;top:8px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.flow b{display:block}
+.flow span{color:var(--muted)}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:12px}
+.svc p{margin:0;color:var(--muted)}
+.offer{background:var(--soft);border-radius:16px;padding:26px}
+footer{margin-top:48px;color:var(--muted);font-size:15px}
+</style>
+</head>
+<body>
+<main>
+  <div class="brand">Tu negocio automatizado</div>
+  <h1>Que tu peluquería no pierda ni una cita más.</h1>
+  <p class="lead">Instalo un sistema que recibe las reservas, llena tu agenda y avisa a tus clientes el día antes. Tú solo cortas el pelo.</p>
+  <div class="btns">
+    <a class="btn" id="wa" href="#">Escríbeme por WhatsApp</a>
+    <a class="btn alt" id="demo" href="#" hidden>Ver demo en vídeo</a>
+  </div>
+
+  <section>
+    <h2>Así funciona para tu cliente</h2>
+    <ol class="flow">
+      <li><b>Reserva en 30 segundos</b><span>Desde el móvil, sin llamar ni esperar respuesta.</span></li>
+      <li><b>La cita entra sola en tu agenda</b><span>Sin apuntar nada a mano.</span></li>
+      <li><b>Recibe la confirmación por email</b><span>Al instante, con día y hora.</span></li>
+      <li><b>El día antes, un recordatorio</b><span>Menos ausencias y menos llamadas para ti.</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Qué puedo instalarte</h2>
+    <div class="svc"><h3>Reservas y recordatorios</h3><p>Formulario de cita, agenda automática, confirmación y aviso el día anterior.</p></div>
+    <div class="svc"><h3>Respuestas a preguntas frecuentes</h3><p>Horarios, precios y servicios contestados sin que tengas que escribir.</p></div>
+    <div class="svc"><h3>Más reseñas en Google</h3><p>Petición automática de reseña después de cada servicio.</p></div>
+  </section>
+
+  <section class="offer">
+    <h2>Gratis para los primeros negocios de San Fermín</h2>
+    <p>Estoy empezando en el barrio. Te lo instalo sin coste y solo te pido tu opinión sincera después.</p>
+    <a class="btn" id="wa2" href="#">Quiero probarlo</a>
+  </section>
+
+  <footer>Tu negocio automatizado · San Fermín, Usera (Madrid)</footer>
+</main>
+<script>
+var NUM="34629748154";
+var DEMO_URL="https://youtu.be/LtswAr84Xs8?si=9AQYoFvWUyS-NUfn";
+var msg=encodeURIComponent("Hola, he visto tu web y me interesa probar el sistema de citas para mi negocio.");
+var link="https://wa.me/"+NUM+"?text="+msg;
+document.getElementById("wa").href=link;
+document.getElementById("wa2").href=link;
+if(DEMO_URL){var d=document.getElementById("demo");d.href=DEMO_URL;d.hidden=false;}
+</script>
+</body>
+</html>
